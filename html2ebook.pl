@@ -32,6 +32,8 @@ $cmd = qq{ebook-convert $ARGV[0]/index.html $ARGV[1].epub --output-profile ipad3
 
 #warn $cmd;
 shell $cmd;
+$cmd1 = qq{terminal-notifier -message "$ARGV[1].epub generated."};
+shell $cmd1;
 
 sub shell ($) {
     my $cmd = shift;
